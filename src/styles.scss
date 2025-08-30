@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use"variables" as *;
+@use"buttons" as *;
+@use"base" as *;
+@use"utilities" as *;
+
+input.ng-invalid.ng-toutched{
+    border: 1px solid red !important;
+    }
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+    background: #f1f1f1;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #388e3c;
+  }
+
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #f1f1f1;
+  }
+

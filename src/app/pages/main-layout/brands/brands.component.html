@@ -1,0 +1,16 @@
+@if(brands){
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4">
+            @for (brand of brands.data; track $index) {
+                <div class="p-4 ">
+                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                        <img class="lg:h-48 md:h-36 w-full object-contain object-center" [src]="brand.image" alt="blog">
+                        <div class="p-6">
+                        <h1 class="title-font text-lg  text-gray-900 mb-3 font-semibold">{{brand.slug}}</h1>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

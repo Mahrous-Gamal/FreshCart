@@ -1,0 +1,47 @@
+<div class="p-4 ">
+    <div
+        class="group hover:shadow-xl duration-500 h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+
+        <div class="text-right p-4 xl:translate-x-[50%] group-hover:translate-x-[0%] duration-500 mx-1">
+            <button (click)="addToWishList(product._id)" class="ms-auto">
+
+                @if(allWishListId.includes(product._id)){
+
+                    <i class="fa-solid fa-heart text-2xl text-red-600"></i>
+                }
+                    @else{
+
+                        <i class="fa-regular fa-heart text-2xl"></i>
+                    }
+            </button>
+        </div>
+        <a [routerLink]="['/details',product._id]"> <img class="h-[300px] w-full object-contain object-center"
+                [src]="product.imageCover" alt="blog"></a>
+        <div class="p-6">
+            <h2 class="tracking-widest text-xs title-font  text-gray-400 mb-1 text-main font-semibold">
+                {{product.category.name}}</h2>
+            <a [routerLink]="['/details',product._id]">
+                <h3 class="title-font text-lg  text-gray-900 mb-3 line-clamp-1 font-semibold">{{product.title}}
+                </h3>
+            </a>
+            <p class="leading-relaxed mb-3 line-clamp-2 ">{{product.description}}</p>
+            <div class="flex items-center flex-wrap">
+                <p class="text-green-500 font-semibold">{{product.price|currency:" EGB "}}</p>
+                <span
+                    class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <i class="fa-solid fa-star text-yellow-500"></i>
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    {{product.ratingsAverage}}
+                </span>
+            </div>
+            <div class="my-3">
+                <button (click)="addToCart(product._id)"
+                    class="xl:translate-y-[300%] group-hover:translate-y-[0%] duration-500 inline-block w-full text-white bg-main border-0 py-2 px-6 focus:outline-none hover:btn-hover rounded text-lg">
+                    Add To Cart
+
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

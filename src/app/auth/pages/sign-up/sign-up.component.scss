@@ -1,0 +1,50 @@
+@use"variables" as *;
+
+
+// input.ng-invalid.ng-touched{
+//   border: 1px solid red !important;
+//   }
+
+.title {
+    font-size: 28px;
+    color: $main-color;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: $main-color;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: $main-color;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }  

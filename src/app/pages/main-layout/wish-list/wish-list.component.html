@@ -1,0 +1,79 @@
+<section class="bg-white py-8 antialiased md:py-16 ">
+    <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+
+        <h2 class="text-xl font-semibold sm:text-2xl rounded text-green-600">
+            Wish List
+        </h2>
+
+        <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+            <!--& product -->
+            <div class="mx-auto  w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+                <div class="space-y-6">
+                    @for (product of allWishListProducts.data; track $index) {
+                    <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
+                        <div class="space-y-4 flex  md:items-center md:justify-between md:gap-6 md:space-y-0 flex-col md:flex-row justify-center items-center ">
+                            <a class="shrink-0 md:order-1">
+                                <img class="h-20 w-20 block object-cover" [src]="product.imageCover" alt="imac image" />
+                            </a>
+
+                            <div class="flex items-center justify-between md:order-3 md:justify-end">
+
+                                <div class="text-end md:order-4 md:w-32">
+                                    <p class="text-base font-bold text-green-600">{{product.price |currency:' EGP '}}</p>
+                                </div>
+                            </div>
+
+                            <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md text-center">
+                                <a
+                                    class="text-base font-bold text-gray-900 my-4 inline-block">{{product.title}}</a>
+
+                                <div class="flex items-center gap-4 justify-center">
+                                    <button type="button" (click)="addToCart(product._id)"
+                                        class="inline-flex items-center text-sm font-bold text-gray-500 hover:text-gray-900 hover:bg-green-100 p-3 rounded">
+                                        <i class="fa-solid fa-cart-shopping mx-2"></i>
+                                        Add to Cart
+                                    </button>
+
+                                    <button type="button" (click)="removeFromWishList(product._id)"
+                                        class="inline-flex items-center text-sm font-bold text-red-600 hover:bg-red-100 p-3 rounded">
+                                        <svg class="me-1.5 h-5 w-5" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                                        </svg>
+                                        Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    } @empty {
+                    <div id="alert-additional-content-1 "
+                        class="p-4 mb-4 text-green-800 border border-gray-100 rounded-lg bg-gray-50 shadow-md flex justify-center items-center flex-col " role="alert">
+                        <div class="flex items-center">
+                            <svg class="shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <h3 class="text-lg font-semibold">Your wish list is empty. Please add items before</h3>
+                        </div>
+                        <div class="mt-2 mb-4 text-sm">
+
+                        </div>
+                        <div class="flex w-full px-8 py-2 text-center">
+                            <button type="button" routerLink="/products"
+                                class="text-white bg-green-600 hover:bg-green-500  focus:outline-none w-full font-medium rounded-md text-sm px-5 py-3 me-2   items-center">
+
+                                Products
+                            </button>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

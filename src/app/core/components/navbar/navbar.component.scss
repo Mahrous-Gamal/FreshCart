@@ -1,0 +1,9 @@
+@use"variables" as *; 
+ 
+
+.cart-active{
+    color: $main-color;
+}
+.heart-active{
+    color: red;
+}

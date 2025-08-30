@@ -1,0 +1,77 @@
+@use"variables" as *;
+
+
+.btn-main{
+   
+    background-color: $main-color;
+    padding: 7px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
+  &:disabled:hover {
+    background-color: #ccc;
+  }
+  &:hover {
+    background-color: #9dde9d;
+  }
+  
+}
+
+.btn-hover{
+  background-color: #9dde9d;
+}
+
+.btn-active{
+  
+    width: 100%;
+    position: relative;
+    // height: 3.5em;
+    border: 3px ridge $main-color;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.4em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  &::after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #f3f4f6;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+
+  &::before{
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #f3f4f6;
+    transition: 0.5s;
+  }
+
+  &:hover::before,&:hover::after{
+    transform: scale(0)
+  }
+
+
+  &:hover{
+    box-shadow: inset 0px 0px 25px $main-color;
+  }
+  }

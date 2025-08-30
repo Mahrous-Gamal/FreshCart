@@ -1,0 +1,72 @@
+@use"variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+
+$font-family:"Encode Sans Expanded", sans-serif;
+
+body{
+    font-family: $font-family;
+}
+
+.bg-main{
+  background-color: $main-color;
+}
+
+// .nav-link {
+//     transition: unset !important;
+//   }
+  .active-link {
+    color: black !important;
+    border-radius: 5px;
+    border-bottom: 1px solid $main-color;
+  }
+  
+  .rating-color {
+    color: $rating-color;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  a,
+  a:hover {
+    
+    color: black;
+    text-decoration: none;
+  }
+  
+  .product {
+    border-radius: 5px;
+    border: solid 1px $main-color;
+    transition: box-shadow 0.5s;
+    overflow: hidden;
+
+    &:hover{
+        box-shadow: 0 0 10px #11bd1168;
+    }
+  }
+  
+  .font-sm {
+    font-size: 12px;
+  }
+  .text-main {
+    color: $main-color;
+  }
+
+
+
+ 
+  .bg-main {
+    background-color: $main-color !important;
+  }
+  .text-main {
+    color: $main-color !important;
+  }
+  .bg-main-light {
+    background-color: $light-color !important;
+  }
+ 
+
+ input.ng-invalid.ng-toutched{
+  border: 1px solid red !important;
+  }
