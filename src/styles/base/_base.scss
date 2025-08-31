@@ -13,15 +13,12 @@ body{
   background-color: $main-color;
 }
 
-// .nav-link {
-//     transition: unset !important;
-//   }
   .active-link {
     color: black !important;
     border-radius: 5px;
     border-bottom: 1px solid $main-color;
   }
-  
+
   .rating-color {
     color: $rating-color;
   }
@@ -30,11 +27,11 @@ body{
   }
   a,
   a:hover {
-    
+
     color: black;
     text-decoration: none;
   }
-  
+
   .product {
     border-radius: 5px;
     border: solid 1px $main-color;
@@ -45,7 +42,7 @@ body{
         box-shadow: 0 0 10px #11bd1168;
     }
   }
-  
+
   .font-sm {
     font-size: 12px;
   }
@@ -53,9 +50,6 @@ body{
     color: $main-color;
   }
 
-
-
- 
   .bg-main {
     background-color: $main-color !important;
   }
@@ -65,8 +59,7 @@ body{
   .bg-main-light {
     background-color: $light-color !important;
   }
- 
 
- input.ng-invalid.ng-toutched{
+  input.ng-invalid.ng-toutched{
   border: 1px solid red !important;
   }
