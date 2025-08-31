@@ -14,7 +14,3 @@ export class HomeComponent {
 
 }
 
-// stringTrim(desc:string):string{
-//  return desc.split(" ").splice(0,2).join(" ")
-// }
-
