@@ -48,7 +48,7 @@ export class ForgetPasswordComponent {
 
   //! btn 1
   sendConfirmEmail(): void {
-    let emailValue=this.confirmEmail.get('email')?.value;
+    let emailValue = this.confirmEmail.get('email')?.value;
     this.resetPassword.get('email')?.patchValue(emailValue);
     this.handleSubmit();
     this.isLoading = false;
@@ -81,7 +81,6 @@ export class ForgetPasswordComponent {
           if (res.status === 'Success') {
             this.isLoading = false;
             this.nextStep();
-            
           }
         },
         error: (err) => {
@@ -95,7 +94,7 @@ export class ForgetPasswordComponent {
   sendResetPassword(): void {
     this.handleSubmit();
     this.isLoading = false;
-    if (this.resetPassword.valid){
+    if (this.resetPassword.valid) {
       this.isLoading = true;
       this.authService.resetPassword(this.resetPassword.value).subscribe({
         next: (res) => {
@@ -111,7 +110,6 @@ export class ForgetPasswordComponent {
         },
       });
     }
-  
   }
 
   handleSubmit() {

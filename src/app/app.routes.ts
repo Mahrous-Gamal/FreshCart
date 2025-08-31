@@ -18,7 +18,7 @@ export const routes: Routes = [
           import('./auth/pages/sign-in/sign-in.component').then(
             (m) => m.SignInComponent
           ),
-        title: 'FreshCart | SignIn',
+        title: 'FreshCart | Sign In',
       },
       {
         path: 'signup',
@@ -26,7 +26,7 @@ export const routes: Routes = [
           import('./auth/pages/sign-up/sign-up.component').then(
             (m) => m.SignUpComponent
           ),
-        title: 'FreshCart | SignUp',
+        title: 'FreshCart | Sign Up',
       },
       {
         path: 'forget',
@@ -34,7 +34,7 @@ export const routes: Routes = [
           import('./auth/pages/forget-password/forget-password.component').then(
             (m) => m.ForgetPasswordComponent
           ),
-        title: 'FreshCart | Forget',
+        title: 'FreshCart | Forget Password',
       },
     ],
   },
