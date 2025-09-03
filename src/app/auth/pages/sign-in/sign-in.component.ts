@@ -9,10 +9,11 @@ import {
 import { Router, RouterLink } from '@angular/router';
 import { ISuccess } from '../../interfaces/ISuccess';
 import { AuthService } from '../../services/auth.service';
-
+import { FormBuilder } from '@angular/forms';
+import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-sign-in',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, NgClass],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
 })
@@ -28,9 +29,7 @@ export class SignInComponent {
   //!! Signin form , validation
   signInForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [
-      Validators.required,
-    ]),
+    password: new FormControl(null, [Validators.required]),
   });
 
   onSubmit(): void {
@@ -67,5 +66,18 @@ export class SignInComponent {
     this.signInForm.markAllAsTouched();
     this.successMessage = '';
     this.errorMessage = '';
+  }
+
+  form: FormGroup;
+  showPassword = false; // 👈 default hidden
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      password: ['', Validators.required],
+    });
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }

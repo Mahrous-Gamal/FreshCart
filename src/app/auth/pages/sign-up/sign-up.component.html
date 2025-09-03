@@ -1,188 +1,182 @@
 <div class="container mx-auto">
   <div class="signUp-Form my-8 px-4">
-    <form [formGroup]="signUpForm" class="mx-auto rounded-lg shadow-lg p-10 max-w-xl">
+    <form [formGroup]="signUpForm" class="mx-auto rounded-lg shadow-lg px-2 lg:px-10 py-10 max-w-xl">
       <p class="title my-6 text-xl font-semibold">Register</p>
 
-   <!-- Name Input with Icon -->
-<div class="relative w-full mt-4">
-  <!-- User Icon -->
-  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
-    <i class="fa-solid fa-user text-lg"></i>
-  </span>
+      <!-- Name Input with Icon -->
+      <div class="relative w-full mt-4">
+        <!-- User Icon -->
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
+          <i class="fa-solid fa-user text-lg"></i>
+        </span>
 
-  <!-- Input Field -->
-  <input
-    type="text"
-    id="name"
-    placeholder="Full Name"
-    formControlName="name"
-    class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-  />
-</div>
+        <!-- Input Field -->
+        <input type="text" id="name" placeholder="Full Name" formControlName="name"
+          class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+      </div>
 
       @let nameControl = signUpForm.get('name');
       @if (nameControl?.errors && nameControl?.touched) {
-        <div role="alert"
-          class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
-          <svg stroke="currentColor" viewBox="0 0 24 24" fill="none"
-            class="h-5 w-5 flex-shrink-0 mr-2 text-red-600" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          @if (nameControl?.getError('required')) {
-            <p class="text-xs font-semibold">Name is required</p>
-          } @else if (nameControl?.getError('minlength')) {
-            <p class="text-xs font-semibold">Name must be at least 3 characters</p>
-          } @else if (nameControl?.getError('maxlength')) {
-            <p class="text-xs font-semibold">Name must be at most 20 characters</p>
-          }
-        </div>
+      <div role="alert"
+        class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-5 w-5 flex-shrink-0 mr-2 text-red-600"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
+            stroke-linecap="round"></path>
+        </svg>
+        @if (nameControl?.getError('required')) {
+        <p class="text-xs font-semibold">Name is required</p>
+        } @else if (nameControl?.getError('minlength')) {
+        <p class="text-xs font-semibold">Name must be at least 3 characters</p>
+        } @else if (nameControl?.getError('maxlength')) {
+        <p class="text-xs font-semibold">Name must be at most 20 characters</p>
+        }
+      </div>
       }
 
-       <div class="relative w-full mt-4">
-          <!-- Email Icon -->
-          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
-            <i class="fa-solid fa-envelope text-lg"></i>
-          </span>
+      <div class="relative w-full mt-4">
+        <!-- Email Icon -->
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
+          <i class="fa-solid fa-envelope text-lg"></i>
+        </span>
 
-          <!-- Input Field -->
-          <input type="email" name="floating_email" id="floating_email" placeholder="Email Address" required
-            autocomplete="email" formControlName="email"
-            class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
-        </div>
+        <!-- Input Field -->
+        <input type="email" name="floating_email" id="floating_email" placeholder="Email Address" required
+          autocomplete="email" formControlName="email"
+          class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+      </div>
       @let emailControl = signUpForm.get('email');
       @if (emailControl?.errors && emailControl?.touched) {
-        <div role="alert"
-          class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
-          <svg stroke="currentColor" viewBox="0 0 24 24" fill="none"
-            class="h-5 w-5 flex-shrink-0 mr-2 text-red-600" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          @if (emailControl?.getError('required')) {
-            <p class="text-xs font-semibold">Email is required</p>
-          } @else if (emailControl?.getError('email')) {
-            <p class="text-xs font-semibold">Enter a valid email</p>
-          }
-        </div>
+      <div role="alert"
+        class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-5 w-5 flex-shrink-0 mr-2 text-red-600"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
+            stroke-linecap="round"></path>
+        </svg>
+        @if (emailControl?.getError('required')) {
+        <p class="text-xs font-semibold">Email is required</p>
+        } @else if (emailControl?.getError('email')) {
+        <p class="text-xs font-semibold">Enter a valid email</p>
+        }
+      </div>
       }
 
       <!-- Password -->
-          <div class="relative w-full mt-4">
-          <!-- Email Icon -->
-          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
-            <i class="fa-solid fa-lock text-l"></i>
-          </span>
+      <div class="relative w-full mt-4">
+        <!-- Lock Icon -->
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
+          <i class="fa-solid fa-lock text-l"></i>
+        </span>
 
-          <!-- Input Field -->
-          <input type="password" name="floating_password" id="floating_password" placeholder="Password" required
-            autocomplete="new-password" formControlName="password"
-            class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
-        </div>
+        <!-- Input Field -->
+        <input [type]="showPassword ? 'text' : 'password'" name="floating_password" id="floating_password"
+          placeholder="Password" required autocomplete="new-password" formControlName="password"
+          class="w-full pl-10 pr-10 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+
+        <!-- Eye Icon -->
+        <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-green-500 cursor-pointer"
+          (click)="togglePassword()">
+          <i [ngClass]="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"></i>
+        </span>
+      </div>
+
       @let passControl = signUpForm.get('password');
       @if (passControl?.errors && passControl?.touched) {
-        <div role="alert"
-          class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
-          <svg stroke="currentColor" viewBox="0 0 24 24" fill="none"
-            class="h-5 w-5 flex-shrink-0 mr-2 text-red-600" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          @if (passControl?.getError('required')) {
-            <p class="text-xs font-semibold">Password is required</p>
-          } @else if (passControl?.getError('pattern')) {
-            <p class="text-xs font-semibold">Password must be at least 7 letters and start with uppercase</p>
-          }
-        </div>
+      <div role="alert"
+        class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-5 w-5 flex-shrink-0 mr-2 text-red-600"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
+            stroke-linecap="round"></path>
+        </svg>
+        @if (passControl?.getError('required')) {
+        <p class="text-xs font-semibold">Password is required</p>
+        } @else if (passControl?.getError('pattern')) {
+        <p class="text-xs font-semibold">Password must be at least 7 letters and start with uppercase</p>
+        }
+      </div>
       }
 
-    <!-- Confirm Password Input with Icon -->
-<div class="relative w-full mt-4">
-  <!-- Lock Icon -->
-  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
-    <i class="fa-solid fa-lock text-lg"></i>
-  </span>
+      <!-- Confirm Password Input with Icon -->
+      <div class="relative w-full mt-4">
+        <!-- Lock Icon -->
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
+          <i class="fa-solid fa-lock text-l"></i>
+        </span>
 
-  <!-- Input Field -->
-  <input
-    type="password"
-    id="rePassword"
-    placeholder="Confirm Password"
-    autocomplete="new-password"
-    formControlName="rePassword"
-    class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-  />
-</div>
+        <!-- Input Field -->
+        <input [type]="showRePassword  ? 'text' : 'password'" id="rePassword" placeholder="Confirm Password"
+          autocomplete="new-password" formControlName="rePassword"
+          class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+
+        <!-- Eye Icon -->
+        <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-green-500 cursor-pointer"
+          (click)="toggleRePassword()">
+          <i [ngClass]="showRePassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"></i>
+        </span>
+      </div>
 
       @if (signUpForm.getError('mismatch') && signUpForm.get('rePassword')?.touched) {
-        <div role="alert"
-          class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
-          <svg stroke="currentColor" viewBox="0 0 24 24" fill="none"
-            class="h-5 w-5 flex-shrink-0 mr-2 text-red-600" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          <p class="text-xs font-semibold">Password confirmation is incorrect</p>
-        </div>
+      <div role="alert"
+        class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-5 w-5 flex-shrink-0 mr-2 text-red-600"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
+            stroke-linecap="round"></path>
+        </svg>
+        <p class="text-xs font-semibold">Password confirmation is incorrect</p>
+      </div>
       }
       @if (signUpForm.get('rePassword')?.getError('required') && signUpForm.get('rePassword')?.touched) {
-        <div role="alert"
-          class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
-          <svg stroke="currentColor" viewBox="0 0 24 24" fill="none"
-            class="h-5 w-5 flex-shrink-0 mr-2 text-red-600" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          <p class="text-xs font-semibold">Password is required</p>
-        </div>
+      <div role="alert"
+        class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-5 w-5 flex-shrink-0 mr-2 text-red-600"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
+            stroke-linecap="round"></path>
+        </svg>
+        <p class="text-xs font-semibold">Password is required</p>
+      </div>
       }
 
       <!-- Phone -->
-  <!-- Phone Input with Icon -->
-<div class="relative w-full mt-4">
-  <!-- Phone Icon -->
-  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
-    <i class="fa-solid fa-phone text-lg"></i>
-  </span>
+      <!-- Phone Input with Icon -->
+      <div class="relative w-full mt-4">
+        <!-- Phone Icon -->
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-green-500 border-r pr-2">
+          <i class="fa-solid fa-phone text-lg"></i>
+        </span>
 
-  <!-- Input Field -->
-  <input
-    type="tel"
-    id="phone"
-    placeholder="Phone Number"
-    formControlName="phone"
-    class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-  />
-</div>
+        <!-- Input Field -->
+        <input type="tel" id="phone" placeholder="Phone Number" formControlName="phone"
+          class="w-full pl-10 pr-4 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+      </div>
 
       @let phoneControl = signUpForm.get('phone');
       @if (phoneControl?.errors && phoneControl?.touched) {
-        <div role="alert"
-          class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
-          <svg stroke="currentColor" viewBox="0 0 24 24" fill="none"
-            class="h-5 w-5 flex-shrink-0 mr-2 text-red-600" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          @if (phoneControl?.getError('required')) {
-            <p class="text-xs font-semibold">Phone number is required</p>
-          } @else if (phoneControl?.getError('pattern')) {
-            <p class="text-xs font-semibold">Invalid phone number</p>
-          }
-        </div>
+      <div role="alert"
+        class="text-red-600 p-2 mb-2 rounded-lg flex items-center transition duration-300 ease-in-out transform ">
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-5 w-5 flex-shrink-0 mr-2 text-red-600"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
+            stroke-linecap="round"></path>
+        </svg>
+        @if (phoneControl?.getError('required')) {
+        <p class="text-xs font-semibold">Phone number is required</p>
+        } @else if (phoneControl?.getError('pattern')) {
+        <p class="text-xs font-semibold">Invalid phone number</p>
+        }
+      </div>
       }
 
       <!-- Submit Button -->
-      <button
-        [disabled]="isLoading"
-        type="button"
-        (click)="onSubmit()"
-        class="text-white bg-green-600 block mx-auto hover:bg-green-900 font-semibold rounded-lg text-sm w-full my-8 px-5 py-2.5"
-      >
+      <button [disabled]="isLoading" type="button" (click)="onSubmit()"
+        class="text-white bg-green-600 block mx-auto hover:bg-green-900 font-semibold rounded-lg text-sm w-full my-8 px-5 py-2.5">
         @if (isLoading) {
-          <i class="fas fa-spin fa-spinner"></i>
+        <i class="fas fa-spin fa-spinner"></i>
         } @else {
-          Submit
+        Submit
         }
       </button>
     </form>

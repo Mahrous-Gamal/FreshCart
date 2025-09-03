@@ -1,16 +1,12 @@
 import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-
+import { FormBuilder } from '@angular/forms';
+import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-forget-password',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './forget-password.component.html',
   styleUrl: './forget-password.component.scss',
 })
@@ -121,5 +117,18 @@ export class ForgetPasswordComponent {
   nextStep() {
     console.log(this.step);
     this.step++;
+  }
+
+  form: FormGroup;
+  showPassword = false; // 👈 default hidden
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      password: ['', Validators.required],
+    });
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }

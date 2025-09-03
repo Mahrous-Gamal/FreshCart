@@ -10,10 +10,12 @@ import { AuthService } from '../../services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ISuccess } from '../../interfaces/ISuccess';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })
@@ -21,7 +23,6 @@ export class SignUpComponent {
   errorMessage: string = '';
   successMessage: string = '';
   isLoading: boolean = false;
-
 
   // !service
   private readonly authService = inject(AuthService);
@@ -48,8 +49,7 @@ export class SignUpComponent {
     },
     { validators: this.confirmPassword }
   );
- 
-  
+
   onSubmit(): void {
     this.handleSubmit();
     if (this.signUpForm.valid) {
@@ -65,15 +65,12 @@ export class SignUpComponent {
           setTimeout(() => {
             this.router.navigate(['/signin']);
           }, 1500);
-
         },
         error: (err: HttpErrorResponse) => {
           this.isLoading = false;
           console.log(err.error);
           console.log(err.error.message);
           this.errorMessage = err.error.message;
-
-        
         },
       });
     }
@@ -91,4 +88,23 @@ export class SignUpComponent {
       ? null
       : { mismatch: true };
   }
+  form: FormGroup;
+ showPassword = false;
+showRePassword = false;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      password: ['', Validators.required],
+    });
+  }
+
+
+
+togglePassword() {
+  this.showPassword = !this.showPassword;
+}
+
+toggleRePassword() {
+  this.showRePassword = !this.showRePassword;
+}
 }
