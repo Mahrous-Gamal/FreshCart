@@ -11,7 +11,12 @@ input.ng-invalid.ng-toutched {
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+  background-image: url("../public/images/light-patten.svg");
+}
+footer{
+  background-image: url("../public/images/light-patten.svg");
+}
 ::-webkit-scrollbar {
   width: 10px;
   height: 8px;
