@@ -1,19 +1,22 @@
 @if(categories){
-    <div class="container mx-auto">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4">
-            @for (category of categories.data; track $index) {
-                <div class="p-4 ">
-                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                        <img class="lg:h-48 md:h-36 w-full object-contain object-center " [src]="category.image" alt="blog">
-                        <div class="p-6">
-                            <h2 class="text-green-700 tracking-widest text-sm title-font   mb-1 font-semibold">{{category.name}}</h2>
-                            <h1 class="title-font text-lg  text-gray-900 mb-3 font-semibold">{{category.slug}}</h1>
-                        </div>
-                    </div>
-                </div>
-            }
+<div class="container mx-auto">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4">
+    @for (category of categories.data; track $index) {
+    <div class="p-4">
+      <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+        <img class="object-contain w-20 h-20 rounded-full mx-auto mt-3" [src]="category.image" alt="blog" />
+        <div class="p-6 text-center">
+          <h2 class="text-green-700 tracking-widest text-sm title-font mb-1 font-semibold">
+            {{ category.name }}
+          </h2>
+          <h1 class="title-font text-lg text-gray-900 mb-3 font-semibold">
+            {{ category.slug }}
+          </h1>
         </div>
+      </div>
     </div>
+
+    }
+  </div>
+</div>
 }
-
-

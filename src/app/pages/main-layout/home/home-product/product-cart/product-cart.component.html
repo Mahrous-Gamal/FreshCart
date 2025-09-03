@@ -1,8 +1,8 @@
 <div class="p-4 ">
     <div
-        class="group hover:shadow-xl duration-500 h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+        class="group shadow-xl hover:shadow-2xl duration-500 h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
 
-        <div class="text-right p-4 xl:translate-x-[50%] group-hover:translate-x-[0%] duration-500 mx-1">
+        <div class="text-right p-4  duration-500 mx-1">
             <button (click)="addToWishList(product._id)" class="ms-auto">
 
                 @if(allWishListId.includes(product._id)){
@@ -15,7 +15,7 @@
                     }
             </button>
         </div>
-        <a [routerLink]="['/details',product._id]"> <img class="h-[300px] w-full object-contain object-center"
+        <a [routerLink]="['/details',product._id]"> <img class="h-[150px] w-full object-contain object-center"
                 [src]="product.imageCover" alt="blog"></a>
         <div class="p-6">
             <h2 class="tracking-widest text-xs title-font  text-gray-400 mb-1 text-main font-semibold">
@@ -24,7 +24,7 @@
                 <h3 class="title-font text-lg  text-gray-900 mb-3 line-clamp-1 font-semibold">{{product.title}}
                 </h3>
             </a>
-            <p class="leading-relaxed mb-3 line-clamp-2 ">{{product.description}}</p>
+            <!-- <p class="leading-relaxed mb-3 line-clamp-2 ">{{product.description}}</p> -->
             <div class="flex items-center flex-wrap">
                 <p class="text-green-500 font-semibold">{{product.price|currency:" EGB "}}</p>
                 <span
@@ -37,7 +37,7 @@
             </div>
             <div class="my-3">
                 <button (click)="addToCart(product._id)"
-                    class="xl:translate-y-[300%] group-hover:translate-y-[0%] duration-500 inline-block w-full text-white bg-main border-0 py-2 px-6 focus:outline-none hover:btn-hover rounded text-lg">
+                    class="duration-500 inline-block w-full text-white bg-main border-0 py-2 px-6 focus:outline-none hover:btn-hover rounded text-lg">
                     Add To Cart
 
                 </button>

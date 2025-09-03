@@ -16,7 +16,7 @@ import { WishListService } from '../../services/wishList/wish-list.service';
 export class NavbarComponent {
 
   _PLATFORM_ID = inject(PLATFORM_ID);
-  
+
   id:string = ''
 
   _cartService: CartService = inject(CartService);
@@ -38,11 +38,11 @@ export class NavbarComponent {
       this.orderNum();
     }
 
-    
+
      if (isPlatformBrowser(this._PLATFORM_ID)){
       this.id = localStorage.getItem('userId')!;
      }
-     
+
     this.flowbitefixService.navbarOpen$.subscribe(open => {
       this.isNavbarOpen = open;
     });

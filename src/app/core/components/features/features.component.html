@@ -1,0 +1,18 @@
+<section class="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  @for (feature of features; track $index) {
+    <div
+      class="flex items-center gap-4 border rounded-lg p-6 bg-white shadow-sm hover:shadow-md transition"
+    >
+      <!-- Icon -->
+      <div class="flex items-center justify-center w-14 h-14 bg-green-100 rounded-full text-green-600 text-2xl">
+        <i [class]="feature.icon"></i>
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h3 class="font-semibold text-gray-800 text-lg">{{ feature.title }}</h3>
+        <p class="text-gray-500 text-sm">{{ feature.desc }}</p>
+      </div>
+    </div>
+  }
+</section>

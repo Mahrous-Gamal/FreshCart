@@ -51,7 +51,9 @@ export class WishListComponent {
         console.log(res);
         console.log(id);
         this._cartService.numOfCartItems = res.numOfCartItems;
-        this._toastrService.success(res.message, '');
+        this._toastrService.success(res.message, '', {
+          timeOut: 3000,
+        });
       },
     });
   }

@@ -1,12 +1,18 @@
+<div class="text-center my-10">
+  <h2 class="font-bold text-2xl mb-4">Our Partner Brands</h2>
+<p class="text-sm font-semibold text-gray-600">Discover quality products from our trusted brand partners. We've partnered with leading <br>
+brands to bring you the best selection of fresh and organic products</p>
+</div>
 @if(brands){
     <div class="container mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-4">
             @for (brand of brands.data; track $index) {
                 <div class="p-4 ">
                     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                        <img class="lg:h-48 md:h-36 w-full object-contain object-center" [src]="brand.image" alt="blog">
+                        <img class="lg:h-40 md:h-32 w-full object-contain object-center" [src]="brand.image" alt="blog">
+                        <hr>
                         <div class="p-6">
-                        <h1 class="title-font text-lg  text-gray-900 mb-3 font-semibold">{{brand.slug}}</h1>
+                        <h1 class="title-font text-lg  text-green-600 mb-3 font-semibold">{{brand.slug}}</h1>
                         </div>
                     </div>
                 </div>

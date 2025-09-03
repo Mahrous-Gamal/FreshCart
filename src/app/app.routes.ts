@@ -64,7 +64,7 @@ export const routes: Routes = [
           import('./pages/main-layout/categories/categories.component').then(
             (m) => m.CategoriesComponent
           ),
-        title: 'FreshCart | Category',
+        title: 'FreshCart | Categories',
       },
       {
         path: 'brands',
@@ -88,7 +88,7 @@ export const routes: Routes = [
           import('./pages/main-layout/cart/cart.component').then(
             (m) => m.CartComponent
           ),
-        title: 'FreshCart | Cart',
+        title: 'FreshCart |  Shopping Cart',
       },
       {
         path: 'wishList',
@@ -96,7 +96,7 @@ export const routes: Routes = [
           import('./pages/main-layout/wish-list/wish-list.component').then(
             (m) => m.WishListComponent
           ),
-        title: 'FreshCart | WishList',
+        title: 'FreshCart | My WishList',
       },
       {
         path: 'allorders/:id',
