@@ -13,6 +13,11 @@ import { Router } from '@angular/router';
   styleUrl: './wish-list.component.scss',
 })
 export class WishListComponent {
+  constructor(private router: Router) {}
+  goToProducts() {
+    this.router.navigate(['/products']);
+  }
+
   _wishListService: WishListService = inject(WishListService);
   _cartService: CartService = inject(CartService);
   _toastrService = inject(ToastrService);
@@ -59,9 +64,5 @@ export class WishListComponent {
     });
   }
 
-    constructor(private router: Router) {}
 
-  goToProducts() {
-    this.router.navigate(['/products']);
-  }
 }
