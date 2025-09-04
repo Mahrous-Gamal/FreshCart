@@ -31,7 +31,6 @@ export class CartComponent implements OnInit {
   }
 
   // ! products in cart
-
   getCart(): void {
     this._cartService.getCart().subscribe({
       next: (res) => {
@@ -53,7 +52,6 @@ export class CartComponent implements OnInit {
   }
 
   // ! remove product in cart button
-
   removeFromCart(id: string): void {
     this._cartService.removeFromCart(id).subscribe({
       next: (res) => {

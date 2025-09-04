@@ -2,8 +2,8 @@
 
   @for (category of categories.data; track $index) {
   <ng-template carouselSlide>
-    <div class=" px-2 py-2 ">
-      <img class="h-[200px] object-cover rounded-lg  " [src]="category.image" [alt]="category.name"
+    <div class=" px-2 py-2">
+      <img class="h-[200px] object-cover rounded-lg p-4 " [src]="category.image" [alt]="category.name"
         [title]="category.slug">
 
     </div>

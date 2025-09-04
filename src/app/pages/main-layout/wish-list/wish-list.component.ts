@@ -38,7 +38,7 @@ export class WishListComponent {
     this._wishListService.removeFromWishList(id).subscribe({
       next: (res) => {
         console.log(res);
-        // this._toastrService.success(res, '');
+        // this._toastrService.success(res.message, '');
         this.getWishList();
       },
     });
