@@ -4,6 +4,7 @@ import { IWishList } from '../../../core/interfaces/wishList/IWishList';
 import { WishListService } from '../../../core/services/wishList/wish-list.service';
 import { CurrencyPipe } from '@angular/common';
 import { CartService } from '../../../core/services/cart/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wish-list',
@@ -56,5 +57,11 @@ export class WishListComponent {
         });
       },
     });
+  }
+
+    constructor(private router: Router) {}
+
+  goToProducts() {
+    this.router.navigate(['/products']);
   }
 }

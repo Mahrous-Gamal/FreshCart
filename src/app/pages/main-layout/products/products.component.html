@@ -27,7 +27,7 @@
     </form>
 
     <h1 class="hidden">freshcart</h1>
-    <div class="grid md:grid-cols-2 lg:grid-cols-5">
+    <div class="grid   md:grid-cols-2 lg:grid-cols-5">
       @for (product of allProducts.data|searchProducts :(searchValue || '') ; track $index) {
       <app-product-cart [allWishListId]="allWishListId" [product]="product"></app-product-cart>
       }
